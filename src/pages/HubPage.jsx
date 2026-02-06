@@ -7,7 +7,7 @@ export default function HubPage() {
       
       <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
-          src="https://img.freepik.com/foto-gratis/formas-geometricas-abstractas-fondo-o-textura_1194-301824.jpg?t=st=1770383339~exp=1770386939~hmac=72ec729cb394392f360f30e55afc278e8f46e86d1cbdfd23e369d5e8025dd138&w=1480"
+          src="https://www.istockphoto.com/vector/sunrise-earth-cosmos-eclipse-sun-rising-over-planet-space-sunrise-with-bright-beams-gm1971122203-558441780"
           alt=""
           className="w-[180%] h-[180%] object-cover opacity-50"
           style={{animation: "hubSpin 240s linear infinite"}}
