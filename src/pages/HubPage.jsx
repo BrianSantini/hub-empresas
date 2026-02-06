@@ -22,7 +22,7 @@ export default function HubPage() {
             href="https://hache.base44.app" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-60 hover:border-white"
+            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-100 hover:border-white hover:shadow-xl hover:shadow-white/50"
             style={{aspectRatio: "1/1"}}
           >
             <img 
@@ -37,7 +37,7 @@ export default function HubPage() {
             href="https://lacapitalmultimedios.base44.app" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-60 hover:border-white"
+            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-100 hover:border-white hover:shadow-xl hover:shadow-white/50"
             style={{aspectRatio: "1/1"}}
           >
             <img 
@@ -52,7 +52,7 @@ export default function HubPage() {
             href="https://casanovaabogados.base44.app" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-60 hover:border-white"
+            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-100 hover:border-white hover:shadow-xl hover:shadow-white/50"
             style={{aspectRatio: "1/1"}}
           >
             <img 
@@ -67,7 +67,7 @@ export default function HubPage() {
             href="https://estiba.base44.app" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-60 hover:border-white"
+            className="group relative rounded-2xl bg-black border border-white border-opacity-10 flex items-center justify-center p-6 transition-all duration-500 hover:border-opacity-100 hover:border-white hover:shadow-xl hover:shadow-white/50"
             style={{aspectRatio: "1/1"}}
           >
             <img 
