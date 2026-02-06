@@ -30,7 +30,7 @@ export default function HubPage() {
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6983a2ceb064115bb66490cb/6ffcc1cfb_ChatGPTImage5feb202610_47_20.png" 
               alt="Hache" 
               className="object-contain"
-              style={{width: "80%", height: "80%"}}
+              style={{width: "70%", height: "70%"}}
             />
           </a>
 
