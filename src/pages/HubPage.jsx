@@ -7,7 +7,7 @@ export default function HubPage() {
       
       <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
-          src="https://media.istockphoto.com/id/1971122203/vector/sunrise-earth-cosmos-eclipse-sun-rising-over-planet-space-sunrise-with-bright-beams-solar.jpg?s=612x612&w=0&k=20&c=pn4c9nZ3wIYL0eS5WP-bRjFeL6WDryBPzANFDjzhECw="
+          src="https://wallpapercave.com/4k-black-space-wallpapers"
           alt=""
           className="w-[10%] h-[10%] object-cover opacity-50"
           style={{animation: "hubSpin 240s linear infinite"}}
