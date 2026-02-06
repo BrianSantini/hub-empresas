@@ -16,7 +16,7 @@ export default function HubPage() {
       {/* Rotating cosmic background */}
       <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1920&q=80"
+          src="https://es.pngtree.com/free-backgrounds-photos/mesa-de-reuniones-pictures"
           alt=""
           className="w-[180%] h-[180%] object-cover"
           style={{
