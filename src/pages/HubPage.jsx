@@ -36,12 +36,7 @@ export default function HubPage() {
             style={{aspectRatio: "1/1"}}
           >
             <div className="flex-1 flex items-center justify-center w-full">
-              <img 
-                src="https://base44.app/api/apps/6980a1b99f15bcad4675bfb0/files/public/6980a1b99f15bcad4675bfb0/4b8b96964_ChatGPTImage2feb202610_13_44.png" 
-                alt="La Capital Multimedios" 
-                className="object-contain grayscale opacity-70"
-                style={{maxWidth: "70%", maxHeight: "70%"}}
-              />
+              <span className="text-5xl font-bold text-white text-opacity-30">L</span>
             </div>
             <span className="text-sm font-medium tracking-wide text-white text-opacity-70 text-center mt-2">La Capital Multimedios</span>
             <ExternalLink className="absolute top-3 right-3 w-4 h-4 text-white text-opacity-0" />
