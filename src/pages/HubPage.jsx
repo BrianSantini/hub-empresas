@@ -5,19 +5,16 @@ export default function HubPage() {
   return (
     <div className="relative min-h-screen bg-slate-950 flex items-center justify-center overflow-hidden">
       
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=3840&q=100"
+          src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1920&q=80"
           alt=""
-          className="absolute w-full h-full object-cover opacity-40"
-          style={{
-            animation: "float 60s ease-in-out infinite",
-            transform: "scale(1.1)"
-          }}
+          className="w-[180%] h-[180%] object-cover opacity-50"
+          style={{animation: "hubSpin 240s linear infinite"}}
         />
       </div>
 
-      <div className="absolute inset-0 bg-slate-950 bg-opacity-60 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-slate-950 bg-opacity-70 pointer-events-none"></div>
 
       <div className="relative z-10 w-full max-w-3xl px-6 py-12">
         <div className="grid grid-cols-2 gap-4">
@@ -106,14 +103,7 @@ export default function HubPage() {
       </div>
 
       <style>
-        {`
-          @keyframes float {
-            0%, 100% { transform: scale(1.1) translate(0, 0); }
-            25% { transform: scale(1.1) translate(-10px, -10px); }
-            50% { transform: scale(1.1) translate(10px, -5px); }
-            75% { transform: scale(1.1) translate(-5px, 10px); }
-          }
-        `}
+        {`@keyframes hubSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}
       </style>
     </div>
   );
