@@ -6,9 +6,9 @@ export default function HubPage() {
       
       <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=3840&q=100"
+          src="https://wallpapercave.com/wp/wp5415078.jpg"
           alt=""
-          className="w-[180%] h-[180%] object-cover opacity-60"
+          className="w-[150%] h-[150%] object-cover opacity-60"
           style={{animation: "hubSpin 240s linear infinite"}}
         />
       </div>
