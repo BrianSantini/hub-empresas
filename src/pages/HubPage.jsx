@@ -60,7 +60,7 @@ export default function HubPage() {
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png" 
               alt="Casanova" 
               className="object-contain"
-              style={{width: "80%", height: "80%"}}
+              style={{width: "95%", height: "95%"}}
             />
           </a>
 
