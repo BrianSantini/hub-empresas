@@ -5,7 +5,7 @@ const HUBS = [
   { 
     name: "Hache", 
     url: "https://hache.base44.app",
-    logo: "https://ejemplo.com/logo-hache.png" // ← Pegá la URL del logo acá
+    logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6983a2ceb064115bb66490cb/6ffcc1cfb_ChatGPTImage5feb202610_47_20.png" // ← Pegá la URL del logo acá
   },
   { 
     name: "La Capital Multimedios", 
@@ -15,12 +15,12 @@ const HUBS = [
   { 
     name: "Casanova", 
     url: "https://casanovaabogados.base44.app",
-    logo: "https://ejemplo.com/logo-casanova.png" // ← Pegá la URL del logo acá
+    logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png" // ← Pegá la URL del logo acá
   },
   { 
     name: "Estiba", 
     url: "https://estiba.base44.app",
-    logo: "https://ejemplo.com/logo-estiba.png" // ← Pegá la URL del logo acá
+    logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_6980928ed81e2aed5e54a361/1c7d0c11c_ChatGPTImage4feb202610_37_32.png" // ← Pegá la URL del logo acá
   },
 ];
 
