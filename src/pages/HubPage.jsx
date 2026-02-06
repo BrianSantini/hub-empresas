@@ -52,7 +52,7 @@ export default function HubPage() {
                 src="https://base44.app/api/apps/6980a1b99f15bcad4675bfb0/files/public/6980a1b99f15bcad4675bfb0/4b8b96964_ChatGPTImage2feb202610_13_44.png" 
                 alt="La Capital Multimedios" 
                 className="object-contain"
-                style={{maxWidth: "70%", maxHeight: "70%"}}
+                style={{maxWidth: "100%", maxHeight: "100%"}}
               />
             </div>
             <span className="text-sm font-medium tracking-wide text-white text-opacity-70 text-center mt-2 relative z-10 transition-all duration-500 group-hover:text-opacity-100">La Capital Multimedios</span>
