@@ -1,20 +1,19 @@
 import React from "react";
-import { ExternalLink } from "lucide-react";
 
 export default function HubPage() {
   return (
-    <div className="relative min-h-screen bg-slate-950 flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
       
       <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
-          src="https://wallpapercave.com/4k-black-space-wallpapers"
+          src="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=3840&q=100"
           alt=""
-          className="w-[10%] h-[10%] object-cover opacity-50"
+          className="w-[180%] h-[180%] object-cover opacity-60"
           style={{animation: "hubSpin 240s linear infinite"}}
         />
       </div>
 
-      <div className="absolute inset-0 bg-slate-950 bg-opacity-70 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
 
       <div className="relative z-10 w-full max-w-3xl px-6 py-12">
         <div className="grid grid-cols-2 gap-4">
@@ -30,7 +29,7 @@ export default function HubPage() {
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6983a2ceb064115bb66490cb/6ffcc1cfb_ChatGPTImage5feb202610_47_20.png" 
               alt="Hache" 
               className="object-contain"
-              style={{width: "70%", height: "70%"}}
+              style={{width: "80%", height: "80%"}}
             />
           </a>
 
@@ -60,7 +59,7 @@ export default function HubPage() {
               src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png" 
               alt="Casanova" 
               className="object-contain"
-              style={{width: "100%", height: "100%"}}
+              style={{width: "95%", height: "95%"}}
             />
           </a>
 
