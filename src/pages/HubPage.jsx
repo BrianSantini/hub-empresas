@@ -2,10 +2,26 @@ import React from "react";
 import { ExternalLink } from "lucide-react";
 
 const HUBS = [
-  { name: "Hache", url: "https://hache.base44.app" },
-  { name: "La Capital Multimedios", url: "https://lacapitalmultimedios.base44.app" },
-  { name: "Casanova", url: "https://casanovaabogados.base44.app" },
-  { name: "Estiba", url: "https://estiba.base44.app" },
+  { 
+    name: "Hache", 
+    url: "https://hache.base44.app",
+    logo: "https://ejemplo.com/logo-hache.png" // ← Pegá la URL del logo acá
+  },
+  { 
+    name: "La Capital Multimedios", 
+    url: "https://lacapitalmultimedios.base44.app",
+    logo: "https://ejemplo.com/logo-lacapital.png" // ← Pegá la URL del logo acá
+  },
+  { 
+    name: "Casanova", 
+    url: "https://casanovaabogados.base44.app",
+    logo: "https://ejemplo.com/logo-casanova.png" // ← Pegá la URL del logo acá
+  },
+  { 
+    name: "Estiba", 
+    url: "https://estiba.base44.app",
+    logo: "https://ejemplo.com/logo-estiba.png" // ← Pegá la URL del logo acá
+  },
 ];
 
 const LOGO_URL = "https://mintcdn.com/base44/RcyKqeFsNlShezsB/logo/Base44-Light-Mode-New.png";
