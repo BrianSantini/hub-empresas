@@ -9,7 +9,7 @@ export default function HubPage() {
           src="https://wallpapercave.com/wp/wp9116464.jpg"
           alt=""
           className="w-[100%] h-[100%] object-cover opacity-60"
-          style={{animation: "hubSpin 240s linear infinite"}}
+          style={{animation: "hubSpin 150s linear infinite"}}
         />
       </div>
 
