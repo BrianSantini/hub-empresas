@@ -51,8 +51,8 @@ const AVAILABLE_APPS = [
 
 // Lista de emails de administradores que pueden acceder a esta página
 const ADMIN_EMAILS = [
-  "lorenzo@hache.com.ar",
-  "admin@hubempresas.com"
+  "lmachado@casanova.ar",
+  "briansantini98@gmail.com"
   // Agregar más emails de administradores aquí
 ];
 
