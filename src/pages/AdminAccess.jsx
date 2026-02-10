@@ -41,6 +41,12 @@ const AVAILABLE_APPS = [
     url: "https://casanovaabogados.base44.app",
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png"
   },
+    {
+    id: "leandro",
+    name: "Informe Leandro",
+    url: "https://leandro.base44.app",
+    logo:"https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698b1ea389075bf898624a83/1c487ea53_image.png"
+  },
   {
     id: "estiba",
     name: "Estiba",
