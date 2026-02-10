@@ -51,8 +51,7 @@ const AVAILABLE_APPS = [
 
 // Lista de emails de administradores que pueden acceder a esta página
 const ADMIN_EMAILS = [
-  "lmachado@casanova.ar",
-  "briansantini98@gmail.com"
+  "lmachado@casanova.ar"
   // Agregar más emails de administradores aquí
 ];
 
