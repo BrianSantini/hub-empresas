@@ -4,7 +4,7 @@ import { base44 } from "@/api/base44Client";
 
 // Definición de las aplicaciones disponibles (debe coincidir con AdminAccess)
 const AVAILABLE_APPS = [
-  {
+{
     id: "hache",
     name: "Hache",
     url: "https://hache.base44.app",
@@ -25,18 +25,18 @@ const AVAILABLE_APPS = [
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png",
     logoSize: "100%"
   },
-      {
-    id: "leandro",
-    name: "Informe Leandro",
-    url: "https://leandro.base44.app",
-    logo:"https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698b1ea389075bf898624a83/5c88fca8f_ChatGPTImage10feb202611_51_11.png", 
-    logoSize: "80%"
-  },
   {
     id: "estiba",
     name: "Estiba",
     url: "https://estiba.base44.app",
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_6980928ed81e2aed5e54a361/1c7d0c11c_ChatGPTImage4feb202610_37_32.png",
+    logoSize: "80%"
+  },
+  {
+    id: "leandro",
+    name: "Informe Leandro",
+    url: "https://leandro.base44.app",
+    logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698b1ea389075bf898624a83/5c88fca8f_ChatGPTImage10feb202611_51_11.png",
     logoSize: "80%"
   }
 ];
