@@ -29,7 +29,7 @@ const AVAILABLE_APPS = [
     id: "leandro",
     name: "Informe Leandro",
     url: "https://leandro.base44.app",
-    logo:"https://files.fm/u/e796vky2f8", 
+    logo:"INFORME LEANDRO", 
     logoSize: "100%"
   },
   {
