@@ -30,7 +30,7 @@ const AVAILABLE_APPS = [
     name: "Informe Leandro",
     url: "https://leandro.base44.app",
     logo:"https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698b1ea389075bf898624a83/5c88fca8f_ChatGPTImage10feb202611_51_11.png", 
-    logoSize: "100%"
+    logoSize: "80%"
   },
   {
     id: "estiba",
