@@ -23,14 +23,14 @@ const AVAILABLE_APPS = [
     name: "Casanova Abogados",
     url: "https://casanovaabogados.base44.app",
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png",
-    logoSize: "85%"
+    logoSize: "100%"
   },
       {
     id: "leandro",
     name: "Informe Leandro",
     url: "https://leandro.base44.app",
     logo:"https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698b1ea389075bf898624a83/a98caa681_ChatGPTImage10feb202611_12_06.png", 
-    logoSize: "85%"
+    logoSize: "100%"
   },
   {
     id: "estiba",
