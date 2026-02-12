@@ -19,7 +19,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { Trash2, Plus, Edit, Shield, ArrowLeft } from "lucide-react";
+import { Trash2, Plus, Edit, Shield, ArrowLeft, Mail, User, Grid } from "lucide-react";
 
 // Definición de las aplicaciones disponibles
 const AVAILABLE_APPS = [
@@ -55,10 +55,9 @@ const AVAILABLE_APPS = [
   }
 ];
 
-// Lista de emails de administradores que pueden acceder a esta página
+// Lista de emails de administradores
 const ADMIN_EMAILS = [
   "lmachado@casanova.ar"
-  // Agregar más emails de administradores aquí
 ];
 
 export default function AdminAccess() {
@@ -73,7 +72,6 @@ export default function AdminAccess() {
     apps: []
   });
 
-  // Verificar si el usuario actual es admin
   const isAdmin = user && ADMIN_EMAILS.includes(user.email?.toLowerCase());
 
   useEffect(() => {
@@ -153,7 +151,6 @@ export default function AdminAccess() {
 
   const handleDelete = async (id) => {
     if (!confirm("¿Estás seguro de eliminar este acceso?")) return;
-    
     try {
       await base44.entities.UserAccess.delete(id);
       loadUserAccesses();
@@ -162,14 +159,6 @@ export default function AdminAccess() {
     }
   };
 
-  const getAppNames = (appIds) => {
-    return appIds
-      .map(id => AVAILABLE_APPS.find(app => app.id === id)?.name)
-      .filter(Boolean)
-      .join(", ");
-  };
-
-  // Pantalla de carga
   if (isLoadingAuth) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
@@ -178,20 +167,15 @@ export default function AdminAccess() {
     );
   }
 
-  // Si no es admin, mostrar acceso denegado
   if (!isAdmin) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center p-4">
         <div className="text-center">
           <Shield className="w-16 h-16 text-red-500 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-white mb-2">Acceso Denegado</h1>
           <p className="text-gray-400 mb-6">No tienes permisos para acceder a esta página.</p>
-          <a 
-            href="/" 
-            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Volver al inicio
+          <a href="/" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300">
+            <ArrowLeft className="w-4 h-4" /> Volver al inicio
           </a>
         </div>
       </div>
@@ -199,47 +183,30 @@ export default function AdminAccess() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-8">
+    <div className="min-h-screen bg-black text-white p-4 md:p-8 pb-20">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
           <div className="flex items-center gap-4">
-            <a 
-              href="/" 
-              className="text-gray-400 hover:text-white transition-colors"
-            >
+            <a href="/" className="text-gray-400 hover:text-white transition-colors">
               <ArrowLeft className="w-6 h-6" />
             </a>
             <div>
-              <h1 className="text-3xl font-bold">Administración de Accesos</h1>
-              <p className="text-gray-400">Gestiona qué usuarios pueden ver cada aplicación</p>
+              <h1 className="text-2xl md:text-3xl font-bold">Administración</h1>
+              <p className="text-gray-400 text-sm md:text-base">Gestiona accesos y permisos</p>
             </div>
           </div>
-          <Button 
-            onClick={() => handleOpenModal()}
-            className="bg-blue-600 hover:bg-blue-700"
-          >
-            <Plus className="w-4 h-4 mr-2" />
-            Nuevo Usuario
+          <Button onClick={() => handleOpenModal()} className="bg-blue-600 hover:bg-blue-700 w-full md:w-auto">
+            <Plus className="w-4 h-4 mr-2" /> Nuevo Usuario
           </Button>
         </div>
 
-        {/* Tabla de usuarios */}
-        <div className="bg-[#1a1a1a] rounded-lg border border-white/10 overflow-hidden">
+        {/* --- VISTA DE ESCRITORIO (TABLA) --- */}
+        <div className="hidden md:block bg-[#1a1a1a] rounded-lg border border-white/10 overflow-hidden">
           {loading ? (
             <div className="p-8 text-center text-gray-400">Cargando usuarios...</div>
           ) : userAccesses.length === 0 ? (
-            <div className="p-8 text-center">
-              <p className="text-gray-400 mb-4">No hay usuarios configurados</p>
-              <Button 
-                onClick={() => handleOpenModal()}
-                variant="outline"
-                className="border-white/20 text-white hover:bg-white/10"
-              >
-                <Plus className="w-4 h-4 mr-2" />
-                Agregar primer usuario
-              </Button>
-            </div>
+            <div className="p-8 text-center text-gray-400">No hay usuarios configurados</div>
           ) : (
             <Table>
               <TableHeader>
@@ -260,35 +227,19 @@ export default function AdminAccess() {
                         {access.apps?.map(appId => {
                           const app = AVAILABLE_APPS.find(a => a.id === appId);
                           return app ? (
-                            <span 
-                              key={appId}
-                              className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded"
-                            >
+                            <span key={appId} className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded">
                               {app.name}
                             </span>
                           ) : null;
                         })}
-                        {(!access.apps || access.apps.length === 0) && (
-                          <span className="text-gray-500 text-sm">Sin accesos</span>
-                        )}
                       </div>
                     </TableCell>
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          onClick={() => handleOpenModal(access)}
-                          className="text-gray-400 hover:text-white hover:bg-white/10"
-                        >
+                        <Button variant="ghost" size="sm" onClick={() => handleOpenModal(access)} className="text-gray-400 hover:text-white hover:bg-white/10">
                           <Edit className="w-4 h-4" />
                         </Button>
-                        <Button 
-                          variant="ghost" 
-                          size="sm"
-                          onClick={() => handleDelete(access.id)}
-                          className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
-                        >
+                        <Button variant="ghost" size="sm" onClick={() => handleDelete(access.id)} className="text-red-400 hover:text-red-300 hover:bg-red-500/10">
                           <Trash2 className="w-4 h-4" />
                         </Button>
                       </div>
@@ -300,32 +251,71 @@ export default function AdminAccess() {
           )}
         </div>
 
-        {/* Info de apps disponibles */}
-        <div className="mt-8 p-6 bg-[#1a1a1a] rounded-lg border border-white/10">
-          <h2 className="text-lg font-semibold mb-4">Aplicaciones Disponibles</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {AVAILABLE_APPS.map(app => (
-              <div key={app.id} className="flex items-center gap-3 p-3 bg-black/50 rounded-lg">
-                <img src={app.logo} alt={app.name} className="w-10 h-10 object-contain" />
-                <div>
-                  <p className="font-medium text-sm">{app.name}</p>
-                  <p className="text-xs text-gray-500">{app.id}</p>
+        {/* --- VISTA MÓVIL (TARJETAS) --- */}
+        <div className="md:hidden space-y-4">
+          {loading ? (
+            <div className="text-center text-gray-400 py-8">Cargando...</div>
+          ) : userAccesses.length === 0 ? (
+            <div className="text-center text-gray-400 py-8">No hay usuarios.</div>
+          ) : (
+            userAccesses.map((access) => (
+              <div key={access.id} className="bg-[#1a1a1a] p-4 rounded-xl border border-white/10 shadow-lg">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex gap-3">
+                    <div className="w-10 h-10 rounded-full bg-blue-900/30 flex items-center justify-center text-blue-400 font-bold">
+                      {access.name ? access.name[0].toUpperCase() : <User className="w-5 h-5" />}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-white text-lg">{access.name || "Sin nombre"}</h3>
+                      <div className="flex items-center text-gray-400 text-sm mt-1">
+                        <Mail className="w-3 h-3 mr-1" />
+                        {access.email}
+                      </div>
+                    </div>
+                  </div>
+                  {/* Menú de acciones móvil */}
+                  <div className="flex gap-1">
+                     <Button variant="ghost" size="icon" onClick={() => handleOpenModal(access)} className="h-8 w-8 text-gray-400">
+                        <Edit className="w-4 h-4" />
+                     </Button>
+                     <Button variant="ghost" size="icon" onClick={() => handleDelete(access.id)} className="h-8 w-8 text-red-400">
+                        <Trash2 className="w-4 h-4" />
+                     </Button>
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-3">
+                  <div className="flex items-center gap-2 mb-2 text-xs text-gray-500 uppercase tracking-wider">
+                    <Grid className="w-3 h-3" /> Acceso a Aplicaciones
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {access.apps?.length > 0 ? (
+                      access.apps.map(appId => {
+                        const app = AVAILABLE_APPS.find(a => a.id === appId);
+                        return app ? (
+                          <div key={appId} className="flex items-center gap-2 bg-black/40 pr-3 rounded-full border border-white/5 overflow-hidden">
+                             <img src={app.logo} className="w-6 h-6 bg-white object-contain" alt="" />
+                             <span className="text-xs text-gray-300 py-1">{app.name}</span>
+                          </div>
+                        ) : null;
+                      })
+                    ) : (
+                      <span className="text-gray-500 text-sm italic">Sin aplicaciones asignadas</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+            ))
+          )}
         </div>
       </div>
 
-      {/* Modal de edición */}
+      {/* Modal - adaptado para móvil */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-[#1a1a1a] border-white/10 text-white">
+        <DialogContent className="bg-[#1a1a1a] border-white/10 text-white w-[95vw] max-w-lg rounded-xl">
           <DialogHeader>
-            <DialogTitle>
-              {editingUser ? "Editar Usuario" : "Nuevo Usuario"}
-            </DialogTitle>
+            <DialogTitle>{editingUser ? "Editar Usuario" : "Nuevo Usuario"}</DialogTitle>
           </DialogHeader>
-          
           <div className="space-y-4 py-4">
             <div>
               <label className="text-sm text-gray-400 mb-1 block">Email *</label>
@@ -333,33 +323,26 @@ export default function AdminAccess() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                placeholder="usuario@email.com"
                 className="bg-black border-white/20 text-white"
                 disabled={!!editingUser}
               />
-              {editingUser && (
-                <p className="text-xs text-gray-500 mt-1">El email no se puede modificar</p>
-              )}
             </div>
-
             <div>
-              <label className="text-sm text-gray-400 mb-1 block">Nombre (opcional)</label>
+              <label className="text-sm text-gray-400 mb-1 block">Nombre</label>
               <Input
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                placeholder="Nombre del usuario"
                 className="bg-black border-white/20 text-white"
               />
             </div>
-
-            <div>
-              <label className="text-sm text-gray-400 mb-3 block">Aplicaciones con acceso</label>
+            <div className="max-h-[40vh] overflow-y-auto">
+              <label className="text-sm text-gray-400 mb-3 block sticky top-0 bg-[#1a1a1a] pb-2 z-10">Apps</label>
               <div className="space-y-3">
                 {AVAILABLE_APPS.map(app => (
                   <div 
                     key={app.id}
-                    className="flex items-center gap-3 p-3 bg-black/50 rounded-lg cursor-pointer hover:bg-black/70"
+                    className="flex items-center gap-3 p-3 bg-black/50 rounded-lg active:scale-95 transition-transform"
                     onClick={() => handleAppToggle(app.id)}
                   >
                     <Checkbox
@@ -368,28 +351,15 @@ export default function AdminAccess() {
                       className="border-white/30 data-[state=checked]:bg-blue-600"
                     />
                     <img src={app.logo} alt={app.name} className="w-8 h-8 object-contain" />
-                    <span>{app.name}</span>
+                    <span className="text-sm">{app.name}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-
-          <DialogFooter>
-            <Button 
-              variant="outline" 
-              onClick={handleCloseModal}
-              className="border-white/20 text-white hover:bg-white/10"
-            >
-              Cancelar
-            </Button>
-            <Button 
-              onClick={handleSave}
-              disabled={!formData.email.trim()}
-              className="bg-blue-600 hover:bg-blue-700"
-            >
-              {editingUser ? "Guardar Cambios" : "Crear Usuario"}
-            </Button>
+          <DialogFooter className="flex-col gap-2 sm:flex-row">
+            <Button variant="outline" onClick={handleCloseModal} className="w-full sm:w-auto border-white/20 text-white">Cancelar</Button>
+            <Button onClick={handleSave} disabled={!formData.email.trim()} className="w-full sm:w-auto bg-blue-600">Guardar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
