@@ -239,7 +239,7 @@ export default function HubPage() {
       <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 w-full max-w-3xl px-6 py-12">
+      <div className="relative z-10 w-full max-w-lg px-4 py-8">
         <AppsGrid apps={allowedApps} />
       </div>
 
