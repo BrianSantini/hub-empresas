@@ -113,10 +113,11 @@ function AppsGrid({ apps }) {
 }
 
 export default function HubPage() {
-  const { user, isLoadingAuth } = useAuth();
+  const { user, isLoadingAuth, navigateToLogin } = useAuth();
   const [allowedApps, setAllowedApps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [accessChecked, setAccessChecked] = useState(false);
+  const [needsLogin, setNeedsLogin] = useState(false);
 
   useEffect(() => {
     checkUserAccess();
@@ -129,8 +130,9 @@ export default function HubPage() {
     try {
       setLoading(true);
 
-      // Si no hay usuario logueado, NO mostrar nada (más seguro)
+      // Si no hay usuario logueado, marcar que necesita login
       if (!user || !user.email) {
+        setNeedsLogin(true);
         setAllowedApps([]);
         setAccessChecked(true);
         setLoading(false);
@@ -181,6 +183,11 @@ export default function HubPage() {
     }
   };
 
+  // Handler para ir al login
+  const handleLogin = () => {
+    navigateToLogin();
+  };
+
   // Pantalla de carga
   if (loading || isLoadingAuth) {
     return (
@@ -200,7 +207,35 @@ export default function HubPage() {
     );
   }
 
-  // Si no hay apps permitidas
+  // Si necesita login (no hay sesión activa)
+  if (needsLogin) {
+    return (
+      <div className="relative bg-black flex items-center justify-center overflow-hidden" style={{ height: "100dvh", minHeight: "-webkit-fill-available" }}>
+        <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
+          <img
+            src="https://wallpapercave.com/wp/wp9116464.jpg"
+            alt=""
+            className="w-[100%] h-[100%] object-cover opacity-60"
+            style={{ animation: "hubSpin 180s linear infinite" }}
+          />
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
+        <div className="relative z-10 text-center px-6">
+          <h1 className="text-2xl font-bold text-white mb-4">Iniciar Sesión</h1>
+          <p className="text-gray-400 mb-6">Necesitas iniciar sesión para acceder a tus aplicaciones.</p>
+          <button
+            onClick={handleLogin}
+            className="px-6 py-3 bg-white text-black font-semibold rounded-xl hover:bg-gray-200 transition-colors"
+          >
+            Iniciar Sesión
+          </button>
+        </div>
+        <style>{`@keyframes hubSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
+      </div>
+    );
+  }
+
+  // Si no hay apps permitidas (usuario logueado pero sin accesos)
   if (accessChecked && allowedApps.length === 0) {
     return (
       <div className="relative bg-black flex items-center justify-center overflow-hidden" style={{ height: "100dvh", minHeight: "-webkit-fill-available" }}>
