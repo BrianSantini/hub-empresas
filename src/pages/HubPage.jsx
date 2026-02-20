@@ -129,9 +129,9 @@ export default function HubPage() {
     try {
       setLoading(true);
 
-      // Si no hay usuario logueado, mostrar todas las apps (comportamiento por defecto)
+      // Si no hay usuario logueado, NO mostrar nada (más seguro)
       if (!user || !user.email) {
-        setAllowedApps(AVAILABLE_APPS);
+        setAllowedApps([]);
         setAccessChecked(true);
         setLoading(false);
         return;
@@ -154,13 +154,12 @@ export default function HubPage() {
           setAllowedApps(filtered);
         } else {
           // Si el usuario no tiene accesos configurados, no mostrar nada
-          // O puedes cambiar esto para mostrar todas si prefieres
           setAllowedApps([]);
         }
       } catch (error) {
         console.error("Error fetching user access:", error);
-        // Si hay error al obtener accesos, mostrar todas las apps
-        setAllowedApps(AVAILABLE_APPS);
+        // Si hay error al obtener accesos, NO mostrar nada (más seguro)
+        setAllowedApps([]);
       }
 
       setAccessChecked(true);
