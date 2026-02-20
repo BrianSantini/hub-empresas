@@ -47,13 +47,13 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
-import HubPage from './pages/HubPage';
 import AdminAccess from './pages/AdminAccess';
+import HubPage from './pages/HubPage';
 
 
 export const PAGES = {
-    "HubPage": HubPage,
     "AdminAccess": AdminAccess,
+    "HubPage": HubPage,
 }
 
 export const pagesConfig = {
