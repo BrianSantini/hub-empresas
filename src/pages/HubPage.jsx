@@ -143,18 +143,30 @@ export default function HubPage() {
       try {
         // Usar filter con objeto vacío para obtener TODOS los registros
         const accesses = await base44.entities.UserAccess.filter({});
+        
+        console.log("=== DEBUG USER ACCESS ===");
+        console.log("User email buscado:", userEmail);
+        console.log("Total accesos encontrados:", accesses?.length || 0);
+        console.log("Emails en BD:", accesses?.map(a => a.email?.toLowerCase()));
+        
         const userAccess = accesses?.find(
-          access => access.email?.toLowerCase() === userEmail
+          access => access.email?.toLowerCase().trim() === userEmail.trim()
         );
+        
+        console.log("UserAccess encontrado:", userAccess);
+        console.log("Apps del usuario:", userAccess?.apps);
+        console.log("=========================");
 
         if (userAccess && userAccess.apps && userAccess.apps.length > 0) {
           // Filtrar las apps permitidas manteniendo el orden definido en AVAILABLE_APPS
           const filtered = AVAILABLE_APPS.filter(app => 
             userAccess.apps.includes(app.id)
           );
+          console.log("Apps filtradas para mostrar:", filtered.map(a => a.id));
           setAllowedApps(filtered);
         } else {
           // Si el usuario no tiene accesos configurados, no mostrar nada
+          console.log("Usuario sin accesos configurados o apps vacías");
           setAllowedApps([]);
         }
       } catch (error) {
