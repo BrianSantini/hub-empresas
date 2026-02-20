@@ -141,7 +141,8 @@ export default function HubPage() {
       const userEmail = user.email.toLowerCase();
       
       try {
-        const accesses = await base44.entities.UserAccess.list();
+        // Usar filter con objeto vacío para obtener TODOS los registros
+        const accesses = await base44.entities.UserAccess.filter({});
         const userAccess = accesses?.find(
           access => access.email?.toLowerCase() === userEmail
         );
