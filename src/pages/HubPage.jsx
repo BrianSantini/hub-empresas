@@ -184,7 +184,7 @@ export default function HubPage() {
   // Pantalla de carga
   if (loading || isLoadingAuth) {
     return (
-      <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+      <div className="relative bg-black flex items-center justify-center overflow-hidden" style={{ height: "100dvh", minHeight: "-webkit-fill-available" }}>
         <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
           <img
             src="https://wallpapercave.com/wp/wp9116464.jpg"
@@ -195,9 +195,7 @@ export default function HubPage() {
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
         <div className="relative z-10 text-white text-xl">Cargando...</div>
-        <style>
-          {`@keyframes hubSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}
-        </style>
+        <style>{`@keyframes hubSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
       </div>
     );
   }
@@ -205,7 +203,7 @@ export default function HubPage() {
   // Si no hay apps permitidas
   if (accessChecked && allowedApps.length === 0) {
     return (
-      <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+      <div className="relative bg-black flex items-center justify-center overflow-hidden" style={{ height: "100dvh", minHeight: "-webkit-fill-available" }}>
         <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
           <img
             src="https://wallpapercave.com/wp/wp9116464.jpg"
@@ -215,26 +213,18 @@ export default function HubPage() {
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center px-6">
           <h1 className="text-2xl font-bold text-white mb-4">Sin Accesos Configurados</h1>
-          <p className="text-gray-400">
-            No tienes aplicaciones asignadas. Contacta al administrador.
-          </p>
-          {user && (
-            <p className="text-gray-500 text-sm mt-4">
-              Usuario: {user.email}
-            </p>
-          )}
+          <p className="text-gray-400">No tienes aplicaciones asignadas. Contacta al administrador.</p>
+          {user && <p className="text-gray-500 text-sm mt-4">Usuario: {user.email}</p>}
         </div>
-        <style>
-          {`@keyframes hubSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}
-        </style>
+        <style>{`@keyframes hubSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
       </div>
     );
   }
 
   return (
-    <div className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden">
+    <div className="relative bg-black flex items-center justify-center overflow-hidden" style={{ height: "100dvh", minHeight: "-webkit-fill-available" }}>
       {/* Fondo animado */}
       <div className="absolute inset-[-40%] flex items-center justify-center pointer-events-none">
         <img
