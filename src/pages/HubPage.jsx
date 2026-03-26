@@ -23,7 +23,7 @@ const AVAILABLE_APPS = [
     name: "Casanova Abogados",
     url: "https://casanovaabogados.base44.app",
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69834ed290afab1ffdc6e966/dc9f43d33_casanova.png",
-    logoSize: "100%"
+    logoSize: "80%"
   },
   {
     id: "estiba",
@@ -55,7 +55,7 @@ function AppCard({ app, className = "" }) {
         src={app.logo} 
         alt={app.name} 
         className="object-contain"
-        style={{ width: app.logoSize, height: app.logoSize }}
+        style={{ width: app.logoSize, height: app.logoSize, maxWidth: "100%", maxHeight: "100%" }}
       />
     </a>
   );
