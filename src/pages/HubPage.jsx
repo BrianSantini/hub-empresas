@@ -43,7 +43,7 @@ const AVAILABLE_APPS = [
     id: "friar",
     name: "Friar",
     url: "https://app.base44.com/apps/6a5e6f61bdbe3652c156dccc/editor/preview",
-    logo: "https://media.base44.com/images/public/6984ed4eb1da7b09d079f855/24c928443_generated_image.png",
+    logo: "https://media.base44.com/images/public/6984ed4eb1da7b09d079f855/b41e4b121_ChatGPTImage7ago202616_24_05.png",
     logoSize: "80%"
   }
 ];
