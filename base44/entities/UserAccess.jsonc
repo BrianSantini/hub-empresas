@@ -1,0 +1,29 @@
+{
+  "name": "UserAccess",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "description": "Email del usuario",
+      "format": "email"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del usuario"
+    },
+    "apps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Lista de IDs de aplicaciones a las que tiene acceso",
+      "default": []
+    }
+  },
+  "required": [
+    "email"
+  ],
+  "unique": [
+    "email"
+  ]
+}

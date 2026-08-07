@@ -38,6 +38,13 @@ const AVAILABLE_APPS = [
     url: "https://leandro.base44.app",
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698b1ea389075bf898624a83/449a98ff8_ChatGPTImage10feb202612_48_55.png",
     logoSize: "80%"
+  },
+  {
+    id: "friar",
+    name: "Friar",
+    url: "https://app.base44.com/apps/6a5e6f61bdbe3652c156dccc/editor/preview",
+    logo: "https://media.base44.com/images/public/6984ed4eb1da7b09d079f855/24c928443_generated_image.png",
+    logoSize: "80%"
   }
 ];
 

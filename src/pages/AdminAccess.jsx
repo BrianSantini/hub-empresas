@@ -52,6 +52,12 @@ const AVAILABLE_APPS = [
     name: "Estiba",
     url: "https://estiba.base44.app",
     logo: "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/user_6980928ed81e2aed5e54a361/1c7d0c11c_ChatGPTImage4feb202610_37_32.png"
+  },
+  {
+    id: "friar",
+    name: "Friar",
+    url: "https://app.base44.com/apps/6a5e6f61bdbe3652c156dccc/editor/preview",
+    logo: "https://media.base44.com/images/public/6984ed4eb1da7b09d079f855/24c928443_generated_image.png"
   }
 ];
 
