@@ -118,7 +118,7 @@ function AppsGrid({ apps }) {
 
   // 4 o más apps: grid 2x2 (si hay más de 4, se muestran en filas adicionales)
   return (
-    <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
+    <div className="grid grid-cols-3 gap-3 md:gap-4 max-w-2xl mx-auto">
       {apps.map(app => (
         <AppCard key={app.id} app={app} />
       ))}
@@ -288,7 +288,7 @@ export default function HubPage() {
       <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-none"></div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 w-full max-w-lg px-4 py-8">
+      <div className="relative z-10 w-full max-w-2xl px-4 py-8">
         <AppsGrid apps={allowedApps} />
       </div>
 
