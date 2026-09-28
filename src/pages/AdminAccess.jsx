@@ -58,6 +58,12 @@ const AVAILABLE_APPS = [
     name: "Friar",
     url: "https://friar.base44.app",
     logo: "https://media.base44.com/images/public/6984ed4eb1da7b09d079f855/b41e4b121_ChatGPTImage7ago202616_24_05.png"
+  },
+  {
+    id: "vicentin",
+    name: "Vicentin",
+    url: "https://vicentin.base44.app",
+    logo: "https://media.base44.com/images/public/user_69779fb8f95372b031170b19/56e490662_arton163049.jpg"
   }
 ];
 
